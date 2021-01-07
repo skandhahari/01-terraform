@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     aws = {
@@ -14,3 +13,7 @@ provider "aws" {
   # VERSION IS NOT NEEDED HERE
 }
 
+resource "aws_iam_user" "my_iam_users"{
+    count = 2
+    name="my_iam_user_${count.index}"
+}
